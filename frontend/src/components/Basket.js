@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import util from '../util'
 export default class Basket extends Component {
+  checkForPromotion = () => {
+    fetch('/api/v1/checkout')
+      .then(products => products.json())
+      .then(products => {
+        this.setState({
+          products: products
+        })
+      })
+  }
   render() {
     const { cartItems } = this.props;
-
     return (
       <div className="alert alert-info">
         {cartItems.length === 0
@@ -15,7 +23,7 @@ export default class Basket extends Component {
             <ul style={{ marginLeft: -25 }}>
               {cartItems.map(item => (
                 <li key={item.id}>
-                  <b>{item.title}</b>
+                  <b>{item.name}</b>
                   <button style={{ float: 'right' }} className="btn btn-danger btn-xs"
                     onClick={(e) => this.props.handleRemoveFromCart(e, item)}>X</button>
                   <br />
@@ -23,13 +31,12 @@ export default class Basket extends Component {
                 </li>))
               }
             </ul>
-
-            <b>Sum: {util.formatCurrency(cartItems.reduce((a, c) => (a + c.price * c.count), 0))}
-            </b>
-            <button onClick={() => alert('Todo: Implement checkout page.')} className="btn btn-primary">checkout</button>
+            <button onClick={this.checkForPromotion} className="btn btn-primary" style={{ "width": "100%" }}>check for promotions</button>
           </div>
         }
       </div>
     )
   }
 }
+
+

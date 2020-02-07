@@ -1,7 +1,7 @@
 module Api 
   module V1
     class ProductsController < ApplicationController
-      def index 
+      def index
         @products = Product.all
         if user_signed_in?
           render json: @products

@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-// import {
-//   HashRouter as Router, 
-//   Route
-// } from 'react-router-dom';
+import axios from "axios";
 import Product from './components/Product';
 import Basket from "./components/Basket";
 import './App.css';
@@ -12,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       cartItems: [],
-      products: []
+      products: [],
+      addedProducts: []
     };
   }
 
@@ -22,6 +20,7 @@ class App extends Component {
         cartItems: JSON.parse(localStorage.getItem("cartItems"))
       });
     }
+    // Get api request to fetch products from the databases
     fetch('/api/v1/products')
       .then(products => products.json())
       .then(products => {
@@ -30,6 +29,43 @@ class App extends Component {
         })
       })
   }
+
+  handleAddToCart = (e, product) => {
+    this.setState(state => {
+      const cartItems = state.cartItems;
+      let productAlreadyInCart = false;
+
+      cartItems.forEach(cp => {
+        if (cp.id === product.id) {
+          cp.count += 1;
+          productAlreadyInCart = true;
+        }
+      });
+
+      if (!productAlreadyInCart) {
+        cartItems.push({ ...product, count: 1 });
+      }
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      return { cartItems: cartItems };
+    });
+    // configuring CSRF token authenticity for users
+    const csrfToken = document.querySelector('[name=csrf-token]').content
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
+    // post api call to add products to cart
+    axios.post(`/api/v1/baskets`, product)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  };
+
+  handleRemoveFromCart = (e, product) => {
+    this.setState(state => {
+      const cartItems = state.cartItems.filter(a => a.id !== product.id);
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      return { cartItems: cartItems };
+    });
+  };
 
   render() {
     return (
