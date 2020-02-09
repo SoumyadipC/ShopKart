@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
 import util from '../util'
 export default class Basket extends Component {
-  checkForPromotion = () => {
-    fetch('/api/v1/checkout')
-      .then(products => products.json())
-      .then(products => {
-        this.setState({
-          products: products
-        })
-      })
-  }
   render() {
-    const { cartItems } = this.props;
+    let checkout = this.props.checkout
+    let cartProducts = this.props.cartProducts
+    const basketItems = this.props.basketItems
+
     return (
       <div className="alert alert-info">
-        {cartItems.length === 0
-          ? "Basket is empty" :
-          <div>You have {cartItems.length} items in the basket. <hr /></div>
+        {cartProducts.length === 0
+          ? "Cart is empty" :
+          <div>You have {cartProducts.length} items in the basket. <hr /></div>
         }
-        {cartItems.length > 0 &&
+        {cartProducts.length > 0 &&
           <div>
-            <ul style={{ marginLeft: -25 }}>
-              {cartItems.map(item => (
-                <li key={item.id}>
-                  <b>{item.name}</b>
-                  <button style={{ float: 'right' }} className="btn btn-danger btn-xs"
-                    onClick={(e) => this.props.handleRemoveFromCart(e, item)}>X</button>
+            {basketItems.map(item => (
+              <ul>
+                <ul key={item.id}>
+                  <b>x {item.count}</b>
                   <br />
-                  {item.count} X {util.formatCurrency(item.price)}
-                </li>))
-              }
+                  <b>Product Price: {item.product_total}</b>
+                </ul>
+              </ul>
+            ))}
+            <ul>
+              <ul key={checkout.id}>
+                <b>Actual Price: {checkout.basket_total}</b>
+                <br />
+                <b>Total Price: {checkout.basket_discount}</b>
+                <br />
+                <b>Amount Payable: {checkout.amount_payable}</b>
+              </ul>
             </ul>
-            <button onClick={this.checkForPromotion} className="btn btn-primary" style={{ "width": "100%" }}>check for promotions</button>
+            <button className="btn btn-primary" style={{ width: '100%' }}>Pay</button>
           </div>
         }
       </div>

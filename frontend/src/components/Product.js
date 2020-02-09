@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import util from '../util'
-import { Link } from 'react-router-dom'
 
 class Product extends Component {
-
     render() {
         const productItems = this.props.products.map(product => (
             <div className="col-md-4" key={product.id}>

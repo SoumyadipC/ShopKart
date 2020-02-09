@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Product from './components/Product';
-import Basket from "./components/Basket";
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       cartItems: [],
       products: [],
-      addedProducts: []
+      addedProducts: [],
+      flag: 0
     };
   }
 
@@ -25,7 +26,8 @@ class App extends Component {
       .then(products => products.json())
       .then(products => {
         this.setState({
-          products: products
+          products: products,
+          flag: 0
         })
       })
   }
@@ -59,30 +61,20 @@ class App extends Component {
       })
   };
 
-  handleRemoveFromCart = (e, product) => {
-    this.setState(state => {
-      const cartItems = state.cartItems.filter(a => a.id !== product.id);
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      return { cartItems: cartItems };
-    });
-  };
-
   render() {
     return (
-      <div className="container">
-        <h1>E-commerce Shopping Cart Application</h1>
-        <hr />
+      <div className="container" style={{ width: '100%' }}>
+        <div className="navbar">
+          <h1>E-commerce Shopping Cart Application
+              <Link to="/my_cart" className="glyphicon glyphicon-shopping-cart" style={{ float: 'right' }}></Link></h1>
+          <hr />
+        </div>
         <div className="row">
           <div className="col-md-8">
             <Product
               products={this.state.products}
+              flag={this.state.flag}
               handleAddToCart={this.handleAddToCart}
-            />
-          </div>
-          <div className="col-md-3">
-            <Basket
-              cartItems={this.state.cartItems}
-              handleRemoveFromCart={this.handleRemoveFromCart}
             />
           </div>
         </div>
