@@ -16,7 +16,7 @@ module Api
         co = checkout_item.blank? ? Checkout.create!(basket_id: current_user.basket.id) : checkout_item
         co.basket_total = co.total
         co.basket_discount = co.total_discounts
-        co.amount_payable = ( co.total - co.total_discounts )
+        co.amount_payable = co.to_pay
         if co.save
           render json: co
         end

@@ -33,4 +33,8 @@ class Checkout < ApplicationRecord
   def cart_items
     self.basket.basket_items
   end
+
+  def to_pay
+    self.total - self.total_discounts
+  end
 end

@@ -1,0 +1,83 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="signup-form">
+    <h2 class="text-center">Become a member</h2>
+    <div class="container">
+       <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control input-lg', placeholder: "email" %>
+      </div>
+
+      <div class="field">
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control input-lg', placeholder: "New Password" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control input-lg', placeholder: "Confirm Password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+         
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+<% end %>
+
+<style type="text/css">
+	body {
+		color: #4e4e4e;
+		background: #e2e2e2;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    background-color: #19232d;
+  }
+
+  label {
+    color: aliceblue;
+  }
+
+  input {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .form-control {
+		background: #f2f2f2;
+    font-size: 16px;
+		border-color: transparent;
+		box-shadow: none !important;
+	}
+	.form-control:focus {
+		border-color: #91d5a8;
+        background: #e9f5ee;
+	}
+    .form-control, .btn {        
+        border-radius: 2px;
+    }
+	.signup-form {
+		width: 380px;
+		margin: 0 auto;
+	}
+    .signup-form h2 {
+        margin: 0;
+        padding: 30px 0;
+        font-size: 34px;
+    }
+  .signup-form a {
+		color: #4aba70;
+	}	
+	.signup-form a:hover {
+		text-decoration: underline;
+  }
+  input[type="submit" i] {
+    padding: 1px 6px;
+    width: 30%;
+}
+</style>

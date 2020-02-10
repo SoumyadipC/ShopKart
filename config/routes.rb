@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/api/v1/checkout/update_checkout', to: 'api/v1/checkouts#update_checkout'
   get '/api/v1/basket_items/get_items', to: 'api/v1/basket_items#get_items'
   put '/api/v1/basket_items/delete', to: 'api/v1/basket_items#delete'
+  get '/my_cart', to: 'welcome#app'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#app'
   namespace :api do 

@@ -1,0 +1,72 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="forgot-password"
+    <h2 class="text-center">Reset Password</h2>
+    <div class="container">
+       <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control input-lg', placeholder: "email" %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit "Submit" %>
+      </div>
+         
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+<% end %>
+
+<style type="text/css">
+	body {
+		color: #4e4e4e;
+		background: #e2e2e2;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    background-color: #19232d;
+  }
+
+  label {
+    color: aliceblue;
+  }
+
+  input {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+    .form-control {
+		background: #f2f2f2;
+    font-size: 16px;
+		border-color: transparent;
+		box-shadow: none !important;
+	}
+	.form-control:focus {
+		border-color: #91d5a8;
+        background: #e9f5ee;
+	}
+    .form-control, .btn {        
+        border-radius: 2px;
+    }
+	.forgot-password {
+		width: 380px;
+		margin: 0 auto;
+	}
+    .forgot-password h2 {
+        margin: 0;
+        padding: 30px 0;
+        font-size: 34px;
+    }
+  .forgot-password a {
+		color: #4aba70;
+	}	
+	.forgot-password a:hover {
+		text-decoration: underline;
+  }
+  input[type="submit" i] {
+    padding: 1px 6px;
+    width: 30%;
+}
+</style>

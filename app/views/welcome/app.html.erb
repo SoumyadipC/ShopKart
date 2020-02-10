@@ -1,11 +1,26 @@
-<nav style="text-align: right">
-<% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>          
-  <% else %>
-    <%= link_to('Login', new_user_session_path)  %> |
-    <%= link_to('Sign Up', new_user_registration_path)  %>  
-  <% end %>
-</nav>
+<header>
+  <div class="container">
+    <nav style="text-align: right">
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>          
+      <% else %>
+        <%= link_to('Login', new_user_session_path)  %> |
+        <%= link_to('Sign Up', new_user_registration_path)  %>  
+      <% end %>
+    </nav>
+  </div>
+</header>
+
 <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css">
 <div id="root"></div>
 <%= javascript_pack_tag 'index' %>
+
+<style type="text/css">
+  body {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #ebebeb;
+    background-color: #19232d;
+  } 
+</style>

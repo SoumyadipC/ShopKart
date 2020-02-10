@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import util from '../util'
+
 export default class Basket extends Component {
   render() {
     let checkout = this.props.checkout
@@ -7,35 +7,35 @@ export default class Basket extends Component {
     const basketItems = this.props.basketItems
 
     return (
-      <div className="alert alert-info">
-        {cartProducts.length === 0
-          ? "Cart is empty" :
-          <div>You have {cartProducts.length} items in the basket. <hr /></div>
+      <div className="container" style={{ background: 'antiquewhite', width: 'auto' }}>
+        {basketItems.length === 0
+          ? <div style={{ color: 'red', padding: '10px' }}>Cart is empty</div> :
+          <div style={{ color: 'red', padding: '10px' }}>You have {basketItems.length} items in the basket. <hr /></div>
         }
-        {cartProducts.length > 0 &&
+        {
+          basketItems.length > 0 &&
           <div>
             {basketItems.map(item => (
-              <ul>
-                <ul key={item.id}>
-                  <b>x {item.count}</b>
-                  <br />
-                  <b>Product Price: {item.product_total}</b>
-                </ul>
-              </ul>
+              <div style={{ color: '#615b5b' }} key={item.id}>
+                <b>{item.product_name} x {item.count}</b>
+                <b style={{ float: 'right' }}>Rs {item.product_total}</b>
+              </div>
             ))}
-            <ul>
-              <ul key={checkout.id}>
-                <b>Actual Price: {checkout.basket_total}</b>
-                <br />
-                <b>Total Price: {checkout.basket_discount}</b>
-                <br />
-                <b>Amount Payable: {checkout.amount_payable}</b>
-              </ul>
-            </ul>
-            <button className="btn btn-primary" style={{ width: '100%' }}>Pay</button>
+            <div style={{ color: '#615b5b' }} key={checkout.id}>
+              <hr style={{ marginTop: '0px', marginBottom: '12px' }} />
+              <b>Actual Price:</b>
+              <b style={{ float: 'right' }}>Rs {checkout.basket_total}</b>
+              <hr style={{ marginTop: '0px', marginBottom: '12px' }} />
+              <b>Total Discount:</b>
+              <b style={{ float: 'right' }}>Rs {checkout.basket_discount}</b>
+              <hr style={{ marginTop: '0px', marginBottom: '12px' }} />
+              <b>Amount Payable:</b>
+              <b style={{ float: 'right' }}>Rs {checkout.amount_payable}</b>
+            </div>
+            <button className="btn btn-primary" style={{ width: '100%', marginTop: '10px', marginBottom: '10px', backgroundColor: '#409452' }}>Pay</button>
           </div>
         }
-      </div>
+      </div >
     )
   }
 }
