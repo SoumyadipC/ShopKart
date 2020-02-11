@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 export default class Basket extends Component {
+  myClick = () => {
+    alert("Feature coming soon")
+  }
   render() {
     let checkout = this.props.checkout
     let cartProducts = this.props.cartProducts
@@ -32,7 +35,7 @@ export default class Basket extends Component {
               <b>Amount Payable:</b>
               <b style={{ float: 'right' }}>Rs {checkout.amount_payable}</b>
             </div>
-            <button className="btn btn-primary" style={{ width: '100%', marginTop: '10px', marginBottom: '10px', backgroundColor: '#409452' }}>Pay</button>
+            <button className="btn btn-primary" style={{ width: '100%', marginTop: '10px', marginBottom: '10px', backgroundColor: '#409452' }} onClick={this.myClick}>Pay</button>
           </div>
         }
       </div >
