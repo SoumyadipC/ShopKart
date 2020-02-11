@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_131813) do
+ActiveRecord::Schema.define(version: 2020_02_09_144229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "basket_items", force: :cascade do |t|
+    t.integer "basket_id"
+    t.integer "product_id"
+    t.integer "count", default: 1
+    t.integer "product_total"
+    t.integer "product_discount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "product_name"
+  end
+
+  create_table "baskets", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "basket_total"
+  end
+
+  create_table "checkouts", force: :cascade do |t|
+    t.integer "basket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "basket_total"
+    t.integer "basket_discount"
+    t.integer "amount_payable"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"

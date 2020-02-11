@@ -1,0 +1,119 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/soumyadip/soumyadip/project/shopkart3/spec/support/devise.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/soumyadip/soumyadip/project/shopkart3/spec/support/database_cleaner.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null
+        ]
+      },
+      "/home/soumyadip/soumyadip/project/shopkart3/app/models/checkout.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          32,
+          32,
+          null,
+          null,
+          1,
+          16,
+          16,
+          32,
+          null,
+          10,
+          10,
+          10,
+          null,
+          8,
+          8,
+          8,
+          14,
+          8,
+          null,
+          null,
+          16,
+          16,
+          null,
+          null,
+          1,
+          16,
+          null,
+          null,
+          1,
+          48,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null
+        ]
+      },
+      "/home/soumyadip/soumyadip/project/shopkart3/app/models/basket.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/soumyadip/soumyadip/project/shopkart3/app/models/product.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/soumyadip/soumyadip/project/shopkart3/app/models/basket_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1581375999
+  }
+}

@@ -1,45 +1,105 @@
 {
-  "App.js": "/src/js/App-94dd7debbae121465b69.js",
-  "App.js.map": "/src/js/App-94dd7debbae121465b69.js.map",
+  "App.js": "/src/js/App-c29e4033bea1d8b3244a.js",
+  "App.js.map": "/src/js/App-c29e4033bea1d8b3244a.js.map",
+  "components/Basket.js": "/src/js/components/Basket-21eaaadc42b2f07e1a52.js",
+  "components/Basket.js.map": "/src/js/components/Basket-21eaaadc42b2f07e1a52.js.map",
+  "components/BasketItem.js": "/src/js/components/BasketItem-d3755349339356c4d6d1.js",
+  "components/BasketItem.js.map": "/src/js/components/BasketItem-d3755349339356c4d6d1.js.map",
+  "components/Cart.js": "/src/js/components/Cart-0c9da65a995ad5994c76.js",
+  "components/Cart.js.map": "/src/js/components/Cart-0c9da65a995ad5994c76.js.map",
+  "components/Product.js": "/src/js/components/Product-f3cbb357965568780909.js",
+  "components/Product.js.map": "/src/js/components/Product-f3cbb357965568780909.js.map",
+  "components/ShowProduct.js": "/src/js/components/ShowProduct-7f1560ad569908713334.js",
+  "components/ShowProduct.js.map": "/src/js/components/ShowProduct-7f1560ad569908713334.js.map",
   "entrypoints": {
     "App": {
       "js": [
-        "/src/js/App-94dd7debbae121465b69.js"
+        "/src/js/App-c29e4033bea1d8b3244a.js"
       ],
       "js.map": [
-        "/src/js/App-94dd7debbae121465b69.js.map"
+        "/src/js/App-c29e4033bea1d8b3244a.js.map"
+      ]
+    },
+    "components/Basket": {
+      "js": [
+        "/src/js/components/Basket-21eaaadc42b2f07e1a52.js"
+      ],
+      "js.map": [
+        "/src/js/components/Basket-21eaaadc42b2f07e1a52.js.map"
+      ]
+    },
+    "components/BasketItem": {
+      "js": [
+        "/src/js/components/BasketItem-d3755349339356c4d6d1.js"
+      ],
+      "js.map": [
+        "/src/js/components/BasketItem-d3755349339356c4d6d1.js.map"
+      ]
+    },
+    "components/Cart": {
+      "js": [
+        "/src/js/components/Cart-0c9da65a995ad5994c76.js"
+      ],
+      "js.map": [
+        "/src/js/components/Cart-0c9da65a995ad5994c76.js.map"
+      ]
+    },
+    "components/Product": {
+      "js": [
+        "/src/js/components/Product-f3cbb357965568780909.js"
+      ],
+      "js.map": [
+        "/src/js/components/Product-f3cbb357965568780909.js.map"
+      ]
+    },
+    "components/ShowProduct": {
+      "js": [
+        "/src/js/components/ShowProduct-7f1560ad569908713334.js"
+      ],
+      "js.map": [
+        "/src/js/components/ShowProduct-7f1560ad569908713334.js.map"
       ]
     },
     "index": {
       "js": [
-        "/src/js/index-a0712541d33166f7bb75.js"
+        "/src/js/index-b8f0532a18f74cd6fc9c.js"
       ],
       "js.map": [
-        "/src/js/index-a0712541d33166f7bb75.js.map"
+        "/src/js/index-b8f0532a18f74cd6fc9c.js.map"
       ]
     },
     "logo": {
       "js": [
-        "/src/js/logo-6f7b8fe6be71bdfa9fc8.js"
+        "/src/js/logo-ecd9940aed62aca28384.js"
       ],
       "js.map": [
-        "/src/js/logo-6f7b8fe6be71bdfa9fc8.js.map"
+        "/src/js/logo-ecd9940aed62aca28384.js.map"
       ]
     },
     "serviceWorker": {
       "js": [
-        "/src/js/serviceWorker-2efc5e89a4c2eebc24a6.js"
+        "/src/js/serviceWorker-11bab3eea6184d0f484b.js"
       ],
       "js.map": [
-        "/src/js/serviceWorker-2efc5e89a4c2eebc24a6.js.map"
+        "/src/js/serviceWorker-11bab3eea6184d0f484b.js.map"
+      ]
+    },
+    "util": {
+      "js": [
+        "/src/js/util-e405f7a772fa9224d510.js"
+      ],
+      "js.map": [
+        "/src/js/util-e405f7a772fa9224d510.js.map"
       ]
     }
   },
-  "index.js": "/src/js/index-a0712541d33166f7bb75.js",
-  "index.js.map": "/src/js/index-a0712541d33166f7bb75.js.map",
-  "logo.js": "/src/js/logo-6f7b8fe6be71bdfa9fc8.js",
-  "logo.js.map": "/src/js/logo-6f7b8fe6be71bdfa9fc8.js.map",
+  "index.js": "/src/js/index-b8f0532a18f74cd6fc9c.js",
+  "index.js.map": "/src/js/index-b8f0532a18f74cd6fc9c.js.map",
+  "logo.js": "/src/js/logo-ecd9940aed62aca28384.js",
+  "logo.js.map": "/src/js/logo-ecd9940aed62aca28384.js.map",
   "media/src/logo.svg": "/src/media/src/logo-5d5d9eefa31e5e13a6610d9fa7a283bb.svg",
-  "serviceWorker.js": "/src/js/serviceWorker-2efc5e89a4c2eebc24a6.js",
-  "serviceWorker.js.map": "/src/js/serviceWorker-2efc5e89a4c2eebc24a6.js.map"
+  "serviceWorker.js": "/src/js/serviceWorker-11bab3eea6184d0f484b.js",
+  "serviceWorker.js.map": "/src/js/serviceWorker-11bab3eea6184d0f484b.js.map",
+  "util.js": "/src/js/util-e405f7a772fa9224d510.js",
+  "util.js.map": "/src/js/util-e405f7a772fa9224d510.js.map"
 }
