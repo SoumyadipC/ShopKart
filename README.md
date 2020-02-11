@@ -7,18 +7,12 @@ Things you may want to cover:
 
 * Ruby version - 2.5.3
 
-* System dependencies
+  Run the following commands to get going-
 
-* Configuration
+  git clone https://github.com/SoumyadipC/ShopKart.git
+  rake db:create
+  rake db:migrate
+  rake db:seed
+  yarn install
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database - postgres
