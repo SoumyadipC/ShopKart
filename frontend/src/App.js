@@ -23,6 +23,18 @@ class App extends Component {
           products: products,
         })
       })
+    // configuring CSRF token authenticity for users
+    const csrfToken = document.querySelector('[name=csrf-token]').content
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
+    // post api call to add products to cart
+    axios.post(`/api/v1/baskets`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
+
+  componentDidMount() {
     fetch('/api/v1/basket_items/get_items')
       .then(items => items.json())
       .then(items => {
@@ -30,19 +42,11 @@ class App extends Component {
           count: items,
         })
       })
-
   }
 
   handleAddToCart = async (e, product) => {
-    // configuring CSRF token authenticity for users
-    const csrfToken = document.querySelector('[name=csrf-token]').content
-    axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
-    // post api call to add products to cart
-    await axios.post(`/api/v1/baskets`, product)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+    await axios.post('/api/v1/basket_items', product)
+
     await axios.get('/api/v1/basket_items/get_items')
       .then(items => {
         this.setState({

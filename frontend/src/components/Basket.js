@@ -24,7 +24,7 @@ export default class Basket extends Component {
                 <b style={{ float: 'right' }}>Rs {item.product_total}</b>
               </div>
             ))}
-            <div style={{ color: '#615b5b' }} key={checkout.id}>
+            <div style={{ color: '#615b5b' }}>
               <hr style={{ marginTop: '0px', marginBottom: '12px' }} />
               <b>Actual Price:</b>
               <b style={{ float: 'right' }}>Rs {checkout.basket_total}</b>

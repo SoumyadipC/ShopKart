@@ -13,6 +13,14 @@ module Api
       end
 
       def create
+        basket = current_user.basket
+        saved_product = basket.basket_items.find_by_product_id(params[:id])
+        if saved_product
+          saved_product.update(count: saved_product.count+1, product_total: saved_product.product_total+params[:price])
+        else
+          product = Product.find_by_id(params[:id])
+          BasketItem.create!( basket_id: basket.id, product_id: product.id, product_name: product.name, product_total: params[:price], product_discount: 0 )
+      end
       end
 
       def delete

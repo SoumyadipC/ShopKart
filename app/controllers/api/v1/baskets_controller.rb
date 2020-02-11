@@ -7,7 +7,6 @@ module Api
 
       def create
         basket = current_user.basket ? current_user.basket : Basket.create!(user_id: current_user.id)
-        basket.update_basket_items params
       end
 
       def promotions
